@@ -13,8 +13,8 @@ const fun = css`
   display: flex;
 `;
 
-function Index1({ isPlaying }) {
+function App({ isPlaying }) {
   return <div className={cx(cat, yarn, isPlaying && fun)} >1231564</div>;
 }
 
-export default Index1
+export default App

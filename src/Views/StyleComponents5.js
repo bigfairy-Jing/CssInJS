@@ -1,7 +1,16 @@
-import styled,  { createGlobalStyle } from 'styled-components'
+import React, { useRef, useState } from 'react';
+import styled, { createGlobalStyle } from 'styled-components'
 import "../Styles/StyleComponents5.css"
 
 // @10 Refs
+const Input = styled.input`
+  padding: 0.5em;
+  margin: 0.5em;
+  color: palevioletred;
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+`;
 
 // @11 权重
 // 带样式的组件类优先于全局类，因为默认情况下，带样式的组件会在运行时在<head>末尾注入其样式。因此，它的样式胜过其他单个类名选择器。
@@ -27,10 +36,30 @@ const Button = styled.div`
   ${/* sc-prop */ something}: papayawhip;
 `
 
+const HHH = styled.h1`
+  font-size: ${props => props.size};
+`
+const DDD = styled.div`
+  background-color: black;
+  color: white;
+`
+
+
 function StyleComponents5() {
+  const [size, setSize] = useState(18)
+  const inputRef = useRef(null)
   return <>
-    <GlobalStyle  whiteColor/>
+    <Input
+      ref={inputRef}
+      placeholder="悬浮聚焦!"
+      onMouseEnter={() => {
+        inputRef.current.focus()
+      }}
+    />
+    <GlobalStyle whiteColor />
     <MyComponent className="red-bg" >12123</MyComponent>
+    <HHH size={`${size}px`}>1111</HHH>
+    <DDD onClick={() => setSize(prev => ++prev)}>123123123123</DDD>
   </>
 }
 

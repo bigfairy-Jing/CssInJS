@@ -1,4 +1,5 @@
-import Radium, { Style } from 'radium';
+import { Style } from 'radium';
+import React from 'react'
 
 
 export default function (params) {

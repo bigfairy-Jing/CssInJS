@@ -1,6 +1,4 @@
-import { useState } from 'react'
-
-
+import React, { useState } from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 
 // @8 利用& 符号有时候会比CSS更加强大, 如果没有写& 然后之后写属性 代表将引用该组件的子代.这里未做解析
@@ -71,7 +69,6 @@ const AttInput = styled.input.attrs(props => ({
   // 可以使用传入的参数进行一定的计算
   margin: ${props => props.size};
   padding: ${props => props.size};
-
 `
 
 // @11 允许attrs 里面的样式重写

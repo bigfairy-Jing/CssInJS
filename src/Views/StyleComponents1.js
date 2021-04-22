@@ -1,5 +1,4 @@
-import { useState } from 'react'
-
+import React , { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import styled, { css }  from 'styled-components'
@@ -103,7 +102,7 @@ function StyleComponents1() {
       <PPP>{count}</PPP>
       <Button onClick={()=>setCount((pre)=>pre + 1)}>+</Button>
       <Button onClick={()=>setCount((pre)=>pre - 1)}>-</Button>
-      
+
       <SaveInput isSecondary defaultValue={'哦豁'} ></SaveInput>
       {/* 这里的属性的顺序是根据我们定义时候的顺序,而不是在下面的顺序 */}
       <SaveInput isSecondary isDisabled defaultValue={'哦豁'} ></SaveInput>

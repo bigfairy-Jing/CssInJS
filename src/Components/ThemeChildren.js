@@ -1,5 +1,5 @@
- 
-import { withTheme, ThemeContext  } from 'styled-components';
+import React from 'react'
+import { ThemeContext  } from 'styled-components';
 import { useContext } from 'react'
 import { Button } from '../Theme/widgets';
 
@@ -14,4 +14,4 @@ function ThemeChildren(props) {
   </>
 }
 
-export default withTheme(ThemeChildren)
+export default ThemeChildren

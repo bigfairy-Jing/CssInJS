@@ -13,6 +13,10 @@ import StyleTheme1 from './Views/StyleTheme1';
 import StyleTheme2 from './Views/StyleTheme2';
 import Radium1 from './Views/Radium1';
 import Linaria1 from './Views/Linaria/Index1';
+import Linaria2 from './Views/Linaria/Index2';
+import LinariaTheme1 from './Views/Linaria/LinariaTheme1';
+import LinariaTheme2 from './Views/Linaria/LinariaTheme2';
+import LinariaTheme3 from './Views/Linaria/LinariaTheme3';
 
 
 import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
@@ -32,6 +36,10 @@ ReactDOM.render(
         <li className="main-ul__li"><Link to="/style-styleTheme2">StyleTheme2</Link></li>
         <li className="main-ul__li"><Link to="/Radium1">Radium1</Link></li>
         <li className="main-ul__li"><Link to="/Linaria1">Linaria1</Link></li>
+        <li className="main-ul__li"><Link to="/Linaria2">Linaria2</Link></li>
+        <li className="main-ul__li"><Link to="/LinariaTheme1">LinariaTheme1</Link></li>
+        <li className="main-ul__li"><Link to="/LinariaTheme2">LinariaTheme2</Link></li>
+        <li className="main-ul__li"><Link to="/LinariaTheme3">LinariaTheme3</Link></li>
       </ul>
     </nav>
     <Route path="/" component={App} exact></Route>
@@ -45,6 +53,10 @@ ReactDOM.render(
     <Route path="/style-styleTheme2" component={StyleTheme2} ></Route>
     <Route path="/Radium1" component={Radium1} ></Route>
     <Route path="/Linaria1" component={Linaria1} ></Route>
+    <Route path="/Linaria2" component={Linaria2} ></Route>
+    <Route path="/LinariaTheme1" component={LinariaTheme1} ></Route>
+    <Route path="/LinariaTheme2" component={LinariaTheme2} ></Route>
+    <Route path="/LinariaTheme3" component={LinariaTheme3} ></Route>
   </Router>,
   document.getElementById('root')
 );
