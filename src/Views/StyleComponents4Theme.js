@@ -9,7 +9,7 @@ import { Button } from '../Theme/widgets'
 // @9 theme
 
 const theme = {
-  main: "mediumseagreen"
+  main: "red"
 };
 
 

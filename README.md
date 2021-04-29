@@ -1,10 +1,10 @@
-## 聊一聊CSS In JS 的几种方式和设置项目主题等基操,实操
+## 聊一聊CSS In JS 的几种方式和设置项目主题等
 > 将css样式写在单独的css样式文件(.css, .less, .scss之类)的文件中,一直是前端开发的约定成俗. 而 CSS In JS就是将应用的CSS样式写在JavaScript文件中,从而使得CSS拥有JS(也同样满足一定程度React的All in JS)的特性，列如模块声明，变量定义，函数调用，条件判断等。
 
 > CSS In JS是一种技术，而非某一个库的实现，我们可以手写代码来实现这种技术，也可以借助现有工具库来实现该技术。
 
 
-__本文将从迄今主要CSS In JS库主流的三个库进行介绍__
+__以下将从迄今主要CSS In JS库主流的三个库进行介绍__
 
 1. [styled-components](https://styled-components.com/)   33.4k star __主要__
 2. [radium](https://formidable.com/open-source/radium/)  7.4k star
@@ -31,7 +31,7 @@ npm install --save styled-components
 
 * 3.1 hellowWorld
 ```react
-import styled, { css }  from 'styled-components'
+import styled  from 'styled-components'
 
 // @1hello world
 const Title = styled.h1`
@@ -247,7 +247,7 @@ const MyComponent = styled.div`background-color: green;`;
 
 * 3.12 插值标记
 ```
-// 有时候处理器会引发错误(列如e.g. CssSyntaxError),即使我们的语法没有错误，这通常是由于插值造成的，更具体地说是处理器不知道您要插值的事实。
+// 有时候处理器会引发错误(列如e.g.CssSyntaxError),即使我们的语法没有错误，这通常是由于插值造成的，更具体地说是处理器不知道您要插值的事实。
 // 所以要告诉他
 const something = 'background'
 const Button = styled.div`
@@ -623,12 +623,6 @@ export default LinariaTheme1
 
 
 
-
-
-
-
-
-
 ##### 八、配合storybook
 1. styled-components
 * 全局GlobalStyles  .storybook/preview.js
@@ -648,9 +642,27 @@ export const decorators = [
 * 因为其是运行时的方式,所以不建议在每个组件中增加主题,可以在总文件中增加,根据传入参数配置主题
 
 2. linaria
-* [Taro加入linaria](http://taro-docs.jd.com/taro/docs/css-in-js) 建议使用linaria
+* [Taro加入linaria](http://taro-docs.jd.com/taro/docs/css-in-js) 
 * storybook 加入linaria
-<!-- 差这个 -->
+```main.js
+  webpackFinal: async (config, { configType }) => {
+    config.module.rules.push({
+      test: /\.js?$/,
+      exclude: /node_modules/,
+      use: [
+        { loader: 'babel-loader' },
+        {
+          loader: "@linaria/webpack-loader",
+          options: {
+            sourceMap: process.env.NODE_ENV !== "production",
+            extension: ".linaria.module.css",
+          },
+        },
+      ],
+    });
+    return config;
+  }
+```
 
 #### 八、优缺点(以下大部分内容选自官网翻译)
 ##### styled-components
@@ -691,38 +703,12 @@ export const decorators = [
 1. Linaria 是基于 CSS 变量的，大部分现代浏览器支持这个特性，但是对于 IE 11 以及以下，是不支持的，所以如果你需要支持 IE 11 ，也许 Linaria 不是你最好的选择
 
 
-![preivew](./src/static/image/styled-7.png)
-![preivew](./src/static/image/styled-7.png)
-![preivew](./src/static/image/styled-7.png)
-![preivew](./src/static/image/styled-7.png)
-![preivew](./src/static/image/styled-7.png)
-![preivew](./src/static/image/styled-7.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #### 文中代码github地址,如有帮助,请star
 [CssInJss](https://github.com/bigfairy-Jing/CssInJS)
+
+[storybook demo](https://github.com/bigfairy-Jing/react-widget-storybook)
 
 #### 参考连接
 * [styled-components](https://styled-components.com/)

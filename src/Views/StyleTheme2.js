@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components'
 // 使用npm run dev:dark 生成黑色按钮
 
 function StyleTheme2() {
-  return (<ThemeProvider theme={{ buttonMode: process.env.REACT_APP_THEME }}>
+  return (<ThemeProvider theme={{ buttonMode: process.env.REACT_APP_THEME || 'light' }}>
     <Button type="ghost">父按钮</Button>
     <br/>
     <br/>

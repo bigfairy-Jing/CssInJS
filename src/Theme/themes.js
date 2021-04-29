@@ -6,7 +6,7 @@ import theme from 'styled-theming';
 const buttonTheme = theme('buttonMode', {
   light: css`
     background: #ffffff;
-    color: #000;
+    color: green;
   `,
   dark: css`
     background: #000;
